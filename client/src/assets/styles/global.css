@@ -1,0 +1,41 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* BODY */
+body {
+  background: #0f172a;
+  color: #fff;
+}
+
+/* SCROLL */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 10px;
+}
+
+/* BUTTON */
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* INPUT */
+input {
+  outline: none;
+  border: none;
+}
+
+/* LINKS */
+a {
+  text-decoration: none;
+  color: inherit;
+  }
