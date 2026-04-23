@@ -1,13 +1,33 @@
-import React from "react";
+import { loginWithGoogle } from "../firebase";
+import useAuth from "../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  return (
-    <div className="auth-container">
-      <div className="auth-box">
-        <h2>Connexion</h2>
+  const { setUser } = useAuth();
+  const navigate = useNavigate();
 
-        <button>🔵 Continuer avec Google</button>
-      </div>
+  const handleGoogleLogin = async () => {
+    try {
+      const user = await loginWithGoogle();
+
+      // sauvegarder user
+      setUser(user);
+
+      // redirection
+      navigate("/");
+    } catch (err) {
+      console.error(err);
+      alert("Erreur connexion Google");
+    }
+  };
+
+  return (
+    <div style={{ textAlign: "center", marginTop: "100px" }}>
+      <h1>DEV-GPT</h1>
+
+      <button onClick={handleGoogleLogin}>
+        Continuer avec Google
+      </button>
     </div>
   );
-  }
+    }
